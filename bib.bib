@@ -1,0 +1,152 @@
+
+@article{andersonAetherEmbeddedDomain2017,
+  title = {Aether: An Embedded Domain Specific Sampling Language for {{Monte Carlo}} Rendering},
+  shorttitle = {Aether},
+  author = {Anderson, Luke and Li, Tzu-Mao and Lehtinen, Jaakko and Durand, Frédo},
+  date = {2017-07-20},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {36},
+  number = {4},
+  pages = {1--16},
+  issn = {0730-0301, 1557-7368},
+  doi = {10.1145/3072959.3073704},
+  url = {https://dl.acm.org/doi/10.1145/3072959.3073704},
+  urldate = {2022-05-06},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/G35QXSZX/Anderson et al. - 2017 - Aether an embedded domain specific sampling langu.pdf}
+}
+
+@inproceedings{atanasovAdaptiveEnvironmentSampling2018,
+  title = {Adaptive Environment Sampling on {{CPU}} and {{GPU}}},
+  booktitle = {{{ACM SIGGRAPH}} 2018 {{Talks}}},
+  author = {Atanasov, Asen and Koylazov, Vladimir and Taskov, Blagovest and Soklev, Alexander and Chizhov, Vassillen and Křivánek, Jaroslav},
+  date = {2018-08-12},
+  pages = {1--2},
+  publisher = {{ACM}},
+  location = {{Vancouver British Columbia Canada}},
+  doi = {10.1145/3214745.3214808},
+  url = {https://dl.acm.org/doi/10.1145/3214745.3214808},
+  urldate = {2022-05-06},
+  abstract = {We present a production-ready approach for efficient environment light sampling which takes visibility into account. During a brief learning phase we cache visibility information in the camera space. The cache is then used to adapt the environment sampling strategy during the final rendering. Unlike existing approaches that account for visibility, our algorithm uses a small amount of memory, provides a lightweight sampling procedure that benefits even unoccluded scenes and, importantly, requires no additional artist care, such as manual setting of portals or other scene-specific adjustments. The technique is unbiased, simple to implement and integrate into a render engine. Its modest memory requirements and simplicity enable efficient CPU and GPU implementations that significantly improve the render times, especially in complex production scenes.},
+  eventtitle = {{{SIGGRAPH}} '18: {{Special Interest Group}} on {{Computer Graphics}} and {{Interactive Techniques Conference}}},
+  isbn = {978-1-4503-5820-0},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/8HMKV46Y/Atanasov et al. - 2018 - Adaptive environment sampling on CPU and GPU.pdf}
+}
+
+@article{bitterliPortalMaskedEnvironment2015,
+  title = {Portal‐{{Masked Environment Map Sampling}}},
+  author = {Bitterli, Benedikt and Novák, Jan and Jarosz, Wojciech},
+  date = {2015-07},
+  journaltitle = {Computer Graphics Forum},
+  shortjournal = {Computer Graphics Forum},
+  volume = {34},
+  number = {4},
+  pages = {13--19},
+  issn = {0167-7055, 1467-8659},
+  doi = {10.1111/cgf.12674},
+  url = {https://onlinelibrary.wiley.com/doi/10.1111/cgf.12674},
+  urldate = {2022-05-06},
+  abstract = {We present a technique to efficiently importance sample distant, all-frequency illumination in indoor scenes. Standard environment sampling is inefficient in such cases since the distant lighting is typically only visible through small openings (e.g. windows). This visibility is often addressed by manually placing a portal around each window to direct samples towards the openings; however, uniformly sampling the portal (its area or solid angle) disregards the possibly high frequency environment map. We propose a new portal importance sampling technique which takes into account both the environment map and its visibility through the portal, drawing samples proportional to the product of the two. To make this practical, we propose a novel, portal-rectified reparametrization of the environment map with the key property that the visible region induced by a rectangular portal projects to an axis-aligned rectangle. This allows us to sample according to the desired product distribution at an arbitrary shading location using a single (precomputed) summed-area table per portal. Our technique is unbiased, relevant to many renderers, and can also be applied to rectangular light sources with directional emission profiles, enabling efficient rendering of non-diffuse light sources with soft shadows.},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/QBV8DFPC/Bitterli et al. - 2015 - Portal‐Masked Environment Map Sampling.pdf}
+}
+
+@article{kajiyaRENDERINGEQUATION1986,
+  title = {{{THE RENDERING EQUATION}}},
+  author = {Kajiya, James T},
+  date = {1986},
+  volume = {20},
+  number = {4},
+  pages = {8},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/S2HW9YZ2/Kajiya - 1986 - THE RENDERING EQUATION.pdf}
+}
+
+@online{LightSettingsBlender,
+  title = {Light {{Settings}} — {{Blender Manual}}},
+  url = {https://docs.blender.org/manual/en/latest/render/cycles/light_settings.html?highlight=light%20portals},
+  urldate = {2022-05-06},
+  file = {/home/jorge/Zotero/storage/HDJ49M3J/light_settings.html}
+}
+
+@article{ogakiGeneralizedLightPortals2020,
+  title = {Generalized {{Light Portals}}},
+  author = {Ogaki, Shinji},
+  date = {2020-08-26},
+  journaltitle = {Proceedings of the ACM on Computer Graphics and Interactive Techniques},
+  shortjournal = {Proc. ACM Comput. Graph. Interact. Tech.},
+  volume = {3},
+  number = {2},
+  pages = {1--19},
+  issn = {2577-6193},
+  doi = {10.1145/3406176},
+  url = {https://dl.acm.org/doi/10.1145/3406176},
+  urldate = {2022-04-23},
+  abstract = {Light portals are useful for accelerating the convergence of Monte Carlo path tracing when rendering interiors. However, they are generally limited to flat polygonal shapes. In this paper, we introduce a new concept that allows existing polygon meshes with arbitrary shaders in a scene to be used as generalized light portals. We also present an efficient sampling method that takes into account the pixel values of the environment map and ray guiding two-dimensional textures that are typically opacity or transparency maps. This novel sampling strategy can be combined with other sampling techniques by using multiple importance sampling. CCS Concepts: • Computing methodologies → Rendering; Ray tracing.},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/7VZJYP5V/Ogaki - 2020 - Generalized Light Portals.pdf}
+}
+
+@book{pharrPhysicallyBasedRendering2016,
+  title = {Physically {{Based Rendering}}: {{From Theory}} to {{Implementation}} (3rd Ed)},
+  author = {Pharr, Matt and Jakob, Wenzel and Humphreys, Greg},
+  date = {2016},
+  publisher = {{Morgan Kaufmann Publishers Inc}},
+  pagetotal = {1266}
+}
+
+@online{PxrPortalLight,
+  title = {{{PxrPortalLight}}},
+  url = {https://rmanwiki.pixar.com/display/REN24/PxrPortalLight},
+  urldate = {2022-05-06},
+  abstract = {Although a portal light is a rectangular shape, it is not interchangeable nor replaceable by a~PxrRectLight~because we get the illumination from the 3D environment using a~ PxrDomeLight .},
+  organization = {{Renderman Documentation}},
+  file = {/home/jorge/Zotero/storage/QGLID6VR/PxrPortalLight.html}
+}
+
+@article{shirleyMonteCarloTechniques1996,
+  title = {Monte {{Carlo}} Techniques for Direct Lighting Calculations},
+  author = {Shirley, Peter and Wang, Changyaw and Zimmerman, Kurt},
+  date = {1996-01},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {15},
+  number = {1},
+  pages = {1--36},
+  issn = {0730-0301, 1557-7368},
+  doi = {10.1145/226150.226151},
+  url = {https://dl.acm.org/doi/10.1145/226150.226151},
+  urldate = {2022-05-11},
+  abstract = {In a distribution ray tracer, the crucial part of the direct lighting calculation is the sampling strategy for shadow ray testing. Monte Carlo integration with importance sampling is used to carry out this calculation. Importance sampling involves the design of integrand-speci c probability density functions which are used to generate sample points for the numerical quadrature. Probability density functions are presented that aid in the direct lighting calculation from luminaires of various simple shapes. A method for de ning a probability density function over a set of luminaires is presented that allows the direct lighting calculation to be carried out with one sample, regardless of the number of luminaires.},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/4W7PHA9H/Shirley et al. - 1996 - Monte Carlo techniques for direct lighting calcula.pdf}
+}
+
+@article{urenaAreaPreservingParametrizationSpherical2013,
+  title = {An {{Area-Preserving Parametrization}} for {{Spherical Rectangles}}},
+  author = {Ureña, Carlos and Fajardo, Marcos and King, Alan},
+  date = {2013-07},
+  journaltitle = {Computer Graphics Forum},
+  volume = {32},
+  number = {4},
+  pages = {59--66},
+  issn = {01677055},
+  doi = {10.1111/cgf.12151},
+  url = {https://onlinelibrary.wiley.com/doi/10.1111/cgf.12151},
+  urldate = {2022-05-13},
+  abstract = {We present an area-preserving parametrization for spherical rectangles which is an analytical function with domain in the unit rectangle [0, 1]2 and range in a region included in the unit-radius sphere. The parametrization preserves areas up to a constant factor and is thus very useful in the context of rendering as it allows to map random sample point sets in [0, 1]2 onto the spherical rectangle. This allows for easily incorporating stratified, quasi-Monte Carlo or other sampling strategies in algorithms that compute scattering from planar rectangular emitters.},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/MBA6ZZYW/Ureña et al. - 2013 - An Area-Preserving Parametrization for Spherical R.pdf}
+}
+
+@article{veachROBUSTMONTECARLO,
+  title = {{{ROBUST MONTE CARLO METHODS FOR LIGHT TRANSPORT SIMULATION}}},
+  author = {Veach, Eric},
+  pages = {432},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/FHJSLUQD/Veach - ROBUST MONTE CARLO METHODS FOR LIGHT TRANSPORT SIM.pdf}
+}
+
+

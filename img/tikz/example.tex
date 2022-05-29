@@ -1,0 +1,21 @@
+\documentclass{standalone}
+
+\usepackage{tikz} 
+%include other needed packages here   
+
+\begin{document}
+\tikzset{>=latex}
+\begin{tikzpicture}[scale = 1.0, every node/.style={scale=1.0}]
+
+\def\W{1.75};
+\def\H{0.75};
+
+\node (A) at (0,0){A};
+\node [align=center](B) at ([shift={(3,-2)}] A.center){lmao}; 
+\draw ([shift={(-\W/2,-\H/2)}] B.center) rectangle ++ (\W, \H);
+\node [anchor=west] at ([shift={(0,0.25+\H/2)}] B.center){$A[k]$};
+
+\draw [->] (A) -| ([shift={(0,\H/2)}] B.center);
+
+\end{tikzpicture}
+\end{document}
