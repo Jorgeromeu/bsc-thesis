@@ -1,9 +1,10 @@
-\documentclass[twocolumn]{article}
+\documentclass[]{article}
 
+\usepackage{float}
+\usepackage{svg}
 \usepackage{amsmath}
 \usepackage{parskip}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{float}
 \usepackage[margin=2cm]{geometry}
 \usepackage{amsthm}
 \usepackage{dsfont}
@@ -15,6 +16,29 @@
 \usepackage{mathtools}
 \usepackage{todonotes}
 \usepackage{kpfonts}
+\usepackage[labelfont=bf, textfont=it]{caption}
+\usepackage{blindtext}
+\usepackage[]{multicol}
+
+\usepackage{titlesec}
+
+% \titleformat*{\section}{\large\bfseries}
+% \titleformat*{\subsection}{\bfseries}
+% \titleformat*{\subsubsection}{\bfseries}
+% \titleformat*{\paragraph}{\bfseries}
+% \titleformat*{\subparagraph}{\bfseries}
+
+\titleformat{\section}
+{\normalfont\large\bfseries}{\thesection}{0.4em}{\vspace{-0.2em}}
+\titleformat{\subsection}
+{\normalfont\bfseries}{\thesubsection}{0.4em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{0.4em}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries}{\theparagraph}{0.4em}{}
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{0.4em}{}
+
 
 % biblatex
 \usepackage[style=numeric, sorting=none]{biblatex}
@@ -28,6 +52,8 @@
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\norm}{\lvert\lvert}{\rvert\rvert}
 
+\svgpath{img/svg/}
+\graphicspath{{img/svg_out/}{img/png}}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -54,9 +80,22 @@
   tabsize=2
 }
 
+% Fancy abstract
+\renewenvironment{abstract}
+{
+\noindent \rule{\linewidth}{.5pt}
+\begin{quote}
+\par{\bfseries \abstractname.}
+}
+{
+\end{quote}
+\medskip\noindent \rule{\linewidth}{.5pt}
+}
+
+
 
 \title{%
-  \huge \textbf{Importance sampling over the visibility of area lights with \emph{light portals}}\\
+  \huge \textbf{\emph{Finding the Hole:} Efficient area light importance lights with light portals}\\
   \vspace{0.4cm}
   \Large J. Romeu Huidobro\\
   \vspace{0.3cm}
@@ -68,52 +107,28 @@
 \date{}
 
 \begin{document}
-\newcommand{\from}[0]{\leftarrow}
 
+\newcommand{\from}[0]{\leftarrow}
 
 \maketitle
 
 \begin{abstract}
-Abstract goes here
+  \blindtext[1]
+  \todo[inline]{Write abstract last}
 \end{abstract}
 
-\section{Introduction}
-Sampling light sources as a means for estimating direct illumination at a given point is an important sampling operation in rendering \cite{pharrPhysicallyBasedRendering2016}. Traditional techniques importance sample according to the light position, solid angle, and BSDF, but do not take into account visibility. This can lead to very high variance when rendering scenes with large light sources that are mostly occluded. 
+\begin{multicols*}{2}
+  
 
-In this paper, we investigate the effectiveness of artist specified \emph{light portals} importance sampling according to visibility. We first use multiple importance sampling \cite*[]{veachROBUSTMONTECARLO} to combine visibility sampling with traditional light sampling. Next, we present a method to directly sample the product of the visibility and light position for certain scenes. Next we present an implementation extending the PBRT-v3 renderer described in \cite*[]{pharrPhysicallyBasedRendering2016}. Lastly we evaluate and discuss the effectiveness of the methods for a variety of scenes before concluding
-
-\section{Background and related work}
-
-\paragraph{The direct lighting integral} Physically based renderers are generally concerned with evaluating the \emph{light transport equation} (LTE) \cite*[]{kajiyaRENDERINGEQUATION1986}. Most light transport algorithms reformulate the LTE into the path-integral formulation \cite*[]{veachROBUSTMONTECARLO} which separates paths of different lengths into separate terms. 
-
-The second term in the path-integral formulation gives the outgoing radiance at a point $p$ and direction $\omega_o$ due to lighting from paths of length 1. The integral is
-
-\begin{equation}
-  \int_{S^2} f(p, \omega_o, \omega_i) L_d(p, \omega_i) \abs{\cos\theta_i} d\omega_i,
-\end{equation}
-
-where $S^2$ is the hemisphere of directions, $f$ is the bidirectional scattering distribution function (BSDF) at point $p$, and $L_d$ is the incident radiance coming directly from a light source. 
-
-\paragraph*{Monte Carlo Integration}
-This integral cannot be solved analytically in general, thus we use \emph{Monte Carlo integration} as a means to numerically estimate it. To compute this estimate, we need to sample $N$ directions $\omega_i$ and apply the Monte Carlo estimator:
-
-\begin{equation}
-  \frac{1}{N} \sum_{i=1}^N \frac{f(p, \omega_o, \omega_i) L_d(p, \omega_r) \abs{\cos\theta_i}}{p(\omega_i)}
-\end{equation}
-
-To reduce variance, we can use \emph{importance sampling} to choose the directions $\omega_i$. The best practice is to use multiple importance sampling \cite{veachROBUSTMONTECARLO} to draw samples according to the BSDF term as well as the lighting term (by only sampling directions towards the light source), but this doesnt take into account the visibility of the light source.
-
-\paragraph{Light portals}
-\emph{Light portals} are artist specified regions in the scene which indicate opening to an environment light (such as a window), which is useful to focus sampling of area lights to only the paths that are visible. They are highly effective for accelerating the convergence of path tracing in scenes using an environment light that is largely occluded, such as an interior scene with a window. Light portals are implemented in a number of production renderers such as Cycles \cite{LightSettingsBlender} and Renderman \cite{PxrPortalLight}. Relevant papers into light portals include \cite{bitterliPortalMaskedEnvironment2015}, which developed a portal-rectified reparameterization of the environment map which allows the environment light to be sampled according to its light intensity, giving better convergence than uniform sampling. \cite{ogakiGeneralizedLightPortals2020} developed a generalization of light portals that allows for the use of arbitrary polygon meshes as portals, rather than the traditional planar rectangles. This being said, traditional light portals only support sampling \emph{environment} lights and currenty do not support accelerating the sampling of area lights.
-
-\paragraph{Adaptive sampling}
-\cite{atanasovAdaptiveEnvironmentSampling2018} developed a two step algrithm for efficiently sampling environment lights without requiring the use of artist specified portals. It works by firstly caching visibility information in the camera space and then adapting the sampling strategy according to the cached visibility information. Once again, this method works only for environment lights.
-
-\paragraph*{Tridirectional path tracing}
-\cite{andersonAetherEmbeddedDomain2017} developed a specialized tridirectional path tracing algorithm for rendering scenes resembling a camera obscura, that is, the observer and the light source are separated by a wall with a small opening. Their algorithm works by tracing the light paths that follow the trajectory of this opening rather than random sampling, leading to much faster convergence for specific scenes. The difference is that our method addresses the general situation of an area light source being partially occluded, not just the very specific, camera obscura scene. 
-
-
+\input{sec/intro.tex}
+\input{sec/background.tex}
+\input{sec/method.tex}
+\input{sec/implementation.tex}
+\input{sec/results.tex}
+\input{sec/discussion.tex}
+\input{sec/conclusion.tex}
 
 \printbibliography[heading=bibintoc, title={References}]
 
+\end{multicols*}
 \end{document}

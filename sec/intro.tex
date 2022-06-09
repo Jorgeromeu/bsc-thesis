@@ -1,0 +1,10 @@
+\section{Introduction}
+\label{sec:intro}
+
+Physically based Monte Carlo light transport algorithms used to create photorealistic imagery with applications ranging from videogames, to architecture visualization. This being said, the most significant limitation is their very high computational demands. 
+
+In most scenes, the direct light is the most significant component, so most rendering algorithms compute direct and indirect lighting independently from one another, where direct light is computed by sending shadow rays from the point to the light sources. This being said, the probability distribution from which the shadow ray directions are can have a high impact on the convergence rate of the scene. In particular consider a scene where a lamp is occluded by a lampshade, shadow rays which are blocked by the lampshade will have no contribution to the image and are thus wasted sampling effort.
+
+One widely used technique for computing direct lighting from environment lights, is \emph{light portals}. These are artist specified regions in space which indicate an opening to the environment light. This information is then used in rendering to focus the sampled directions to those that go through the window. Our contribution consists in extending the notion of light portals to accelerate the sampling of area lights. In particular, we repurpose shadow volume algorithms to precompute the regions from which the light is visible through the portal.
+
+After reviewing monte carlo techniques for direct lighting calculation, and providing an overview of existing use cases and sampling strategies for light portals (\autoref{sec:background}), we expand on the details of our method (\autoref{sec:method}). Next we discuss our implementation into an existing path tracer (\autoref{sec:implementation}), evaluate it, in comparison to existing strategies for a diverse set of scenes (\autoref{sec:results}), and discuss the results (\autoref{sec:discussion}) before concluding (\autoref{sec:conclusion}).

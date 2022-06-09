@@ -1,0 +1,40 @@
+\section{Background and related work}
+\label{sec:background}
+
+\paragraph*{The Light Transport Equation} Physically based renderers are generally concerned with evaluating the recursive \emph{light transport equation} (LTE) \cite*[]{kajiyaRENDERINGEQUATION1986}.
+
+\begin{equation}
+  \tiny
+  L_o(p, \omega_o) = L_e(p, \omega_o) + \int_{\Omega} f(p, \omega_o, \omega_i) L_o(p, \omega_o, \omega_i) \abs{\cos\theta_i} d\omega_i,
+\end{equation}
+
+which says that the exitant radiance at a point $p$ in direction $\omega_o$ is equal to the emitted radiance at $p$ towards $\omega_o$, plus the portion of the incident light from the hemisphere of directions $\Omega$ which gets reflected towards $\omega_o$. 
+
+\paragraph{The direct lighting integral} 
+
+
+By repeated unfolding of the recursive call, the LTE can be reformulated into the path-integral formulation \cite*{veachROBUSTMONTECARLO} which separates paths of different lengths into separate terms, this allows us to calculate direct and indirect independently. The direct lighting term is the integral
+
+\begin{equation}
+  \int_{\Omega} f(p, \omega_o, \omega_i) L_d(p, \omega_i) \abs{\cos\theta_i} d\omega_i,
+\end{equation}
+
+where $L_d$ is the \emph{direct} radiance from direction $\omega_i$, $f$ is the Bidirectional Scattering Function (BSDF) and the cosine term accounts for lamberts law.
+
+\paragraph*{Monte Carlo Integration}
+This integral cannot be solved analytically in general, thus we use \emph{Monte Carlo integration} as a means to numerically estimate it. To compute this estimate, we need to sample $N$ directions $\omega_i$ and apply the Monte Carlo estimator:
+
+\begin{equation}
+  \frac{1}{N} \sum_{i=1}^N \frac{f(p, \omega_o, \omega_i) L_d(p, \omega_r) \abs{\cos\theta_i}}{p(\omega_i)}
+\end{equation}
+
+To reduce variance, we can use \emph{importance sampling} to choose the directions $\omega_i$. The best practice is to use multiple importance sampling \cite{veachROBUSTMONTECARLO} to draw samples according to the BSDF term as well as the lighting term (by only sampling directions towards the light source), but this approach does not take the visibility of the light source into account when drawing the samples, which can lead to high variance when rendering scenes where the light is partially occluded.
+
+\paragraph{Light portals}
+\emph{Light portals} are artist specified regions in the scene which indicate an opening to an environment light (such as a window). The portal is then used to focus the environment light sampling to only those directions that are visible through the portal. They are highly effective for accelerating the convergence of path tracing for scenes using an environment light that is largely occluded, such as interior scenes with a window. Light portals are implemented in a number of production renderers such as Cycles \cite{LightSettingsBlender} and Renderman \cite{PxrPortalLight}, and are a widely used technique. 
+
+Several portal-sampling strategies exist, uniform portal sampling is easy to implement but can give poor convergence for scenes where the environment map has a highly non-uniform brightness distribution. To handle such cases, the product of the environment light's importance map and the portal visibility can be sampled directly \cite*[]{bitterliPortalMaskedEnvironment2015}, or alternatively, samples can be drawn according to the portal and the importance map and combined with multiple importance sampling.
+
+This being said, light portals are only used for sampling \emph{environment lights}, and a number of different challenges and opportunities are presented when applying the same technique to area lights. 
+
+Environment lights extend across the whole scene, thus any direction sampled towards the portal will also reach the light source, this is not the case for area lights. Furthermore, in most practical scenes the solid angle subtended by the light is smaller than the one subtended by the portal, making uniform portal sampling a very poor strategy for area lights.

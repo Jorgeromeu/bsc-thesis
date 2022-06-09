@@ -1,0 +1,4 @@
+\section{Implementation}
+\label{sec:implementation}
+
+We implement our method within the PBRT-V3 renderer \cite{pharrPhysicallyBasedRendering2016}. To support planar lights, the shape base class is extended by the \texttt{AAPlane} which implements axis-aligned plane intersection. Next, the area light base class is extended by the \texttt{PortalLight} class, which behaves like a standard area light but also stores the geometry of the portal and implements the sampling strategy explained in \autoref{sec:method}. No modification is done to the integrators themselves, only the direct lighting calculation changes, thus the portal sampling strategy can be used in any integrator which separates direct lighting from indirect lighting. For this report, the path integrator is used, which implements standard unidirectional path tracing with next event estimation.

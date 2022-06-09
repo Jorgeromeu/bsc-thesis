@@ -1,0 +1,22 @@
+\section{Method}
+\label{sec:method}
+ 
+\subsection*{Sampling light through a portal}
+
+An interesting way to think about light portals is to consider the shadow that would be cast by the portal if we were to replace it with an occluder.  With this in mind, we can partition the space in front of the portal into 3 distinct regions, the umbra, penumbra, and the region out of shadow. These are defined by (elmar citation) as:
+
+\begin{itemize}
+  \item The \textbf{umbra} (hard shadow) represents the points where all paths to the light source are occluded by the portal
+  \item The \textbf{penumbra} (soft shadow) is the remainder of the shadow, and represents the points where some, but not all paths to the light are occluded
+  \item The \textbf{region outside of shadow}  is the area where none of the paths to the light are occluded
+\end{itemize}
+
+However, the portal, of course is not an occluder, it is precisely the opposite, as it indicates an opening to the portal. Thus, we can reason about the portal-equivalent regions:
+
+\begin{itemize}
+  \item \textbf{anti-umbra} the region where all paths to the light go \emph{through} the portal
+  \item \textbf{anti-penumbra} the region where some of the paths to the light go through the portal, but others don't 
+  \item region \textbf{outside of anti-shadow} is the area where none of the paths to the light go through the portal
+\end{itemize}
+
+The advantage of reasoning in terms of shadows is that we can use existing shadow volume algorithms to compute these regions, and to test for being inside of them (citations). Knowing which region we are in can be used to highly accelerate the sampling process. For points in the antiumbra, visibility through the portal is guaranteed, so we can use standard light sampling. For points in the antipenumbra we compute the projection of the light onto the portal-plane and sample their intersection, this, of course is more expensive, but guarantees visibility through the portal. Lastly, for points outside of the anti-shadow, there is no need to do any sampling at all, as the light is not visible through the portal, so we can just return black.
