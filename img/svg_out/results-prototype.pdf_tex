@@ -1,0 +1,89 @@
+%% Creator: Inkscape 1.2 (dc2aedaf03, 2022-05-15), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'results-prototype.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1730.19062541bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.36563862)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{results-prototype.pdf}}%
+    \put(0.20007854,0.27516464){\color[rgb]{0.4,0.6,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{portals}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{results-prototype.pdf}}%
+    \put(0.65813075,0.0113911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Ref. x spp\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{results-prototype.pdf}}%
+    \put(0.29121882,0.01197248){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Portals\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{results-prototype.pdf}}%
+    \put(0.76934988,0.24552576){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5s\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{results-prototype.pdf}}%
+    \put(0.83377063,0.24552576){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5s\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{results-prototype.pdf}}%
+    \put(0.8978994,0.24552576){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5s\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{results-prototype.pdf}}%
+    \put(0.96315633,0.24552576){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5s\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{results-prototype.pdf}}%
+    \put(0.76934988,0.30946553){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5s\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{results-prototype.pdf}}%
+    \put(0.83377063,0.30946553){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5s\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{results-prototype.pdf}}%
+    \put(0.8978994,0.30946553){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5s\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{results-prototype.pdf}}%
+    \put(0.96315633,0.30946553){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5s\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{results-prototype.pdf}}%
+    \put(0.85137629,0.07489375){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}time\end{tabular}}}}%
+    \put(0.74850002,0.14297633){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}MSE\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{results-prototype.pdf}}%
+    \put(0.92290127,0.18562299){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Portal sampling\end{tabular}}}}%
+    \put(0.92290127,0.17541235){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Light sampling\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{results-prototype.pdf}}%
+    \put(0.98929022,0.36025076){\color[rgb]{1,1,1}\rotatebox{-90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}light sampling\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{results-prototype.pdf}}%
+    \put(0.98929022,0.30246677){\color[rgb]{1,1,1}\rotatebox{-90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}portal sampling\end{tabular}}}}}%
+  \end{picture}%
+\endgroup%

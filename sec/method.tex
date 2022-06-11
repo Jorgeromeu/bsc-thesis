@@ -1,22 +1,117 @@
 \section{Method}
 \label{sec:method}
- 
-\subsection*{Sampling light through a portal}
 
-An interesting way to think about light portals is to consider the shadow that would be cast by the portal if we were to replace it with an occluder.  With this in mind, we can partition the space in front of the portal into 3 distinct regions, the umbra, penumbra, and the region out of shadow. These are defined by (elmar citation) as:
+We now present our method. We begin by explaining how the portal is represented and incorporated into the light distribution for a scene with a single light and a single portal. Next, we give an effective yet slow sampling strategy and show how it can be made more efficient by repurposing ideas from shadow calculations. Lastly, we generalize the provided method to multiple portals and multiple lights.
+
+\subsection{Sampling a single light portal}
+
+Consider a simple scene containing a single light source covered by a lampshade (\autoref{fig:simplescene}). The core idea behind our method is to have the artist include the geometry of the opening to the light source as a "portal" in the scene description. This portal is then incorporated into the light distribution of the scene. When constructing the light distribution, the portal is prioritized for points in front of it and never sampled for points behind it.
+
+\begin{figure}[H]
+  \def\svgwidth{0.9\columnwidth}
+  \input{img/svg_out/simplescene.pdf_tex}
+  \caption{Simple scene (left) showing the region behind and in front of the portal. As well as an ilustration of the light distribution for the scene}
+  \label{fig:simplescene}
+\end{figure}
+
+\subsection{Sampling the portal}
+\label{sec:proj-sampling}
+
+In  (background), we explained why uniformly sampling the portal area is not a good strategy when using light portals with area lights. If we want to only sample directions which go through the portal and are facing the light, the region that needs to be sampled is the intersection of the solid angles subtended by the light source and the light portal. 
+
+This region can be sampled by projecting the light source from the perspective of the shading point onto the portal and then clipping the projected region to the portal bounds \cite{sutherlandReentrantPolygonClipping1974}.
+
+\begin{figure}[H]
+  \centering
+  \def\svgwidth{0.6\columnwidth}
+  \input{img/svg_out/projection.pdf_tex}
+  \caption{Projecion sampling. The light (yellow) is projected onto the portal-plane (blue) and clipped to the portal bounds. Samples are then drawn from the clipped region (green).}
+  \label{fig:projection}
+\end{figure} 
+
+This sampling strategy is effective per sample but much slower than light sampling or portal sampling. In the next section, we show how some additional geometry allows us to restrict the use of this sampling strategy to the points where it provides the most significant advantage over more efficient alternatives.
+
+\subsection{Thinking in terms of shadows}
+\label{sec:antishadow}
+
+An interesting way to think about light portals is to consider the shadow that the portal would cast if we were to replace it with an occluder. The area in front of the occluder can then be separated into four regions. The \emph{umbra}, \emph{penumbra} and \emph{antumbra} of the shadow, as well as the region out of shadow\cite{hasenfratzSurveyRealtimeSoft2003}. These regions are defined as: 
 
 \begin{itemize}
-  \item The \textbf{umbra} (hard shadow) represents the points where all paths to the light source are occluded by the portal
-  \item The \textbf{penumbra} (soft shadow) is the remainder of the shadow, and represents the points where some, but not all paths to the light are occluded
-  \item The \textbf{region outside of shadow}  is the area where none of the paths to the light are occluded
+  \item The \textbf{umbra} (hard shadow) is the portion of the shadow where the occluder blocks all direct paths to the light source.
+  \item The \textbf{penumbra} (soft shadow) is the portion of the shadow where some but not all direct paths to the light are occluded.
+  \item If the occluder is smaller than the light, the umbra will converge, forming the \textbf{antumbra}, which is the portion of the penumbra where the occluder is directly in front of the light.
+  \item The \textbf{region outside of shadow} is the area where none of the paths to the light is occluded.
 \end{itemize}
 
-However, the portal, of course is not an occluder, it is precisely the opposite, as it indicates an opening to the portal. Thus, we can reason about the portal-equivalent regions:
+Nonetheless, the portal is not an occluder, but instead precisely the opposite, as it indicates an \emph{opening} to the light. Thus, these same regions take on a new meaning when we treat them from the portal's perspective. The portal-equivalent regions are:
 
 \begin{itemize}
-  \item \textbf{anti-umbra} the region where all paths to the light go \emph{through} the portal
-  \item \textbf{anti-penumbra} the region where some of the paths to the light go through the portal, but others don't 
-  \item region \textbf{outside of anti-shadow} is the area where none of the paths to the light go through the portal
+  \item The \textbf{anti-umbra} is the region where all direct paths to the light go through the portal.
+  \item The \textbf{anti-penumbra} is the region where some but not all paths to the light go through the portal.
+  \item The \textbf{anti-antumbra} is the region where the portal is directly in front of the light but does not fully cover it.
+  \item The region \textbf{outside of the antishadow} is the area where none of the paths from the shading point to the light to the light pass through the portal
 \end{itemize}
 
-The advantage of reasoning in terms of shadows is that we can use existing shadow volume algorithms to compute these regions, and to test for being inside of them (citations). Knowing which region we are in can be used to highly accelerate the sampling process. For points in the antiumbra, visibility through the portal is guaranteed, so we can use standard light sampling. For points in the antipenumbra we compute the projection of the light onto the portal-plane and sample their intersection, this, of course is more expensive, but guarantees visibility through the portal. Lastly, for points outside of the anti-shadow, there is no need to do any sampling at all, as the light is not visible through the portal, so we can just return black.
+\begin{figure}[H]
+  \centering
+  \subfloat[2D representation of shadow and antishadow regions.]{
+  \def\svgwidth{0.8\columnwidth}
+  \input{img/svg_out/antishadow.pdf_tex}
+  }
+  \\
+  \subfloat[View of the light and portal from the point of view of the shading point, in different regions of the portal antishadow.]{
+  \def\svgwidth{0.7\columnwidth}
+  \input{img/svg_out/antishadow-pov.pdf_tex}
+  }
+  \label{fig:antishadow}
+  \caption{Two-dimensional representation of the regions of a shadow. If we replace the occluder with a light portal, the same geometric volumes take different roles.}
+\end{figure}
+
+Returning to our problem of sampling the light going through a portal, having an idea of which region of the antishadow the shading point is in can be used to choose a sampling strategy. Firstly, if the shading point is  \textbf{outside of the antishadow}, there is no need to do any sampling whatsoever, as there are no direct paths through the portal that reach the light. Thus if the shading point is in this region, we can simply return zero without any computation.
+
+If the shading point is in the \textbf{anti-umbra}, all direct paths to the light go through the portal, so visibility is guaranteed. Thus, the optimal sampling strategy is to sample the light source itself. Conversely, when the shading point is in the \textbf{anti-antumbra}, all of the paths through the portal hit the light, making portal sampling the optimal strategy. Figure (antumbra b) gives a good intuition on why this works.
+
+Lastly, points in the \textbf{anti-penumbra} are more complex, as some but not all direct paths to the light go through the portal. In this case, we resort to using the effective, but slow projection sampling method explained in \autoref{sec:proj-sampling}. 
+
+Returning to the simple scene from figure \autoref{fig:simplescene}, we can now partition the space further by including the antishadow volumes. Now, we add the sampling strategies discussed above to the light distribution, weighing the PDF of each strategy based on which region of the antishadow the shading point is contained in.
+
+\begin{figure}[H]
+  \def\svgwidth{0.9\columnwidth}
+  \input{img/svg_out/simplescene-antishadow.pdf_tex}
+  \label{fig:simplescene-antishadow}
+  \caption{Simple scene employing antishadow volumes to weight the choice of sampling strategy depending on the location of the shading point.}
+\end{figure}
+
+In doing this, we restrict the slow projection sampling technique to only the points in the anti-penumbra and use faster strategies for shading points where there is no additional benefit gained by projecting.
+
+\subsection{Computing the antishadow regions}
+
+In \autoref{sec: antishadow}, we explained the concept of a light portal "antishadow" and how information about which region of the antishadow the shading point is in can be used to sample the portal efficiently. This section discusses how these antishadow volumes are computed and used to weigh sapling strategies.
+
+For polygonal objects, the shape of the umbra and penumbra regions can be embedded in a discontinuity mesh constructed from the edges and vertices of the light, and the portal \cite*{drettakisFastShadowAlgorithm1994}. However, we implement a simplified version of this algorithm limited to rectangular aligned light and portal. 
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Anti-umbra]{
+  \def\svgscale{0.24}
+  \input{img/svg_out/aa-umbra.pdf_tex}
+  \label{fig:umbra-calculation}
+  }
+  \subfloat[Anti-penumbra]{
+  \def\svgscale{0.24}
+  \input{img/svg_out/aa-penumbra.pdf_tex}
+  \label{fig:penumbra-calculation}
+  }
+  \caption{Computing the anti-umbra and anti-penumbra for aligned rectangles. The anti-antumbra can be derived from the Anti-umbra.}
+\end{figure}
+
+The anti-umbra is the frustum produced by connecting the adjacent vertices from the portal and the light (\autoref{fig:umbra-calculation}). Likewise, the anti-penumbra is the frustum produced by connecting the \emph{opposite} vertices from the light to the portal (\autoref{fig:penumbra-calculation}). The anti-antumbra does not need to be explicitly computed, as it is defined by the same planes that make up the anti-umbra, but with their normals inverted.
+
+To check which region a point is in, we can check if the point is on the right side of all of the planes defining the region. This process is quite fast as, in the worst case, it requires only eight dot products and comparisons. However, a slower implementation would be equally suitable since the light distribution is precomputed.
+
+\subsection{Multiple portals and multiple lights}
+Finally, generalizing to multiple portals and multiple lights is relatively straightforward. Since we incorporate the portals into the light distribution, we can assign the probability density of each portal based on 
+
+\todo[inline]{will write this section later as I want to try some quick heuristics such as portal area, portal distance etc. to set the pdfs of each portal}
+
+

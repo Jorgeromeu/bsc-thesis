@@ -53,6 +53,69 @@
   file = {/home/jorge/Zotero/storage/QBV8DFPC/Bitterli et al. - 2015 - Portal‐Masked Environment Map Sampling.pdf}
 }
 
+@article{crowSHADOWALGORITHMSCOMPUTER,
+  title = {{{SHADOW ALGORITHMS FOR COMPUTER GRAPHICS}}},
+  author = {Crow, Franklin C},
+  pages = {7},
+  abstract = {Shadows are advocated for improved comprehension and enhanced realism in computer-synthesized images. A classification of shadow algorithms delineates three approaches: shadow computation during scanout; division of object surfaces into shadowed and unshadowed areas prior to removal of hidden surfaces; and inclusion of shadow volumes in the object data. The classes are related to existing shadow algorithms and implementations within each class are sketched. A brief comparison of the three approaches suggests that the last approach has the most appealing characteristics.},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/ZNZRCBCU/Crow - SHADOW ALGORITHMS FOR COMPUTER GRAPHICS.pdf}
+}
+
+@inproceedings{drettakisFastShadowAlgorithm1994,
+  title = {A Fast Shadow Algorithm for Area Light Sources Using Backprojection},
+  booktitle = {Proceedings of the 21st Annual Conference on {{Computer}} Graphics and Interactive Techniques  - {{SIGGRAPH}} '94},
+  author = {Drettakis, George and Fiume, Eugene},
+  date = {1994},
+  pages = {223--230},
+  publisher = {{ACM Press}},
+  location = {{Not Known}},
+  doi = {10.1145/192161.192207},
+  url = {http://portal.acm.org/citation.cfm?doid=192161.192207},
+  urldate = {2022-06-09},
+  abstract = {The fast identification of shadow regions due to area light sources is necessary for realistic rendering and for discontinuity meshing for global illumination. A new shadow-determination algorithm is presented that uses a data structure, called a backprojection, to represent the visible portion of a light source from any point in the scene. A complete discontinuity meshing algorithm is described for polyhedral scenes and area light sources, which includes an important class of light/geometry interactions that have not been implemented before. A fast incremental algorithm for computing backprojections is also described. The use of spatial subdivision, and heuristics based on computed statistics of typical scenes, results in efficient mesh and backprojection computation. Results of the implementation show that the use of the backprojection and discontinuity meshing permits accelerated high-quality rendering of shadows using both ray-casting and polygon-rendering with interpolants.},
+  eventtitle = {The 21st Annual Conference},
+  isbn = {978-0-89791-667-7},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/ZJUJVUTK/Drettakis and Fiume - 1994 - A fast shadow algorithm for area light sources usi.pdf}
+}
+
+@article{greinerEfficientClippingArbitrary1998,
+  title = {Efficient Clipping of Arbitrary Polygons},
+  author = {Greiner, Günther and Hormann, Kai},
+  date = {1998-04},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {17},
+  number = {2},
+  pages = {71--83},
+  issn = {0730-0301, 1557-7368},
+  doi = {10.1145/274363.274364},
+  url = {https://dl.acm.org/doi/10.1145/274363.274364},
+  urldate = {2022-05-31},
+  abstract = {Clipping 2D polygons is one of the basic routines in computer graphics. In rendering complex 3D images it has to be done several thousand times. Efficient algorithms are therefore very important. We present such an efficient algorithm for clipping arbitrary 2D polygons. The algorithm can handle arbitrary closed polygons, specifically where the clip and subject polygons may self-intersect. The algorithm is simple and faster than Vatti’s algorithm [11], which was designed for the general case as well. Simple modifications allow determination of union and set-theoretic difference of two arbitrary polygons.},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/T3XW4JNU/Greiner and Hormann - 1998 - Efficient clipping of arbitrary polygons.pdf}
+}
+
+@article{hasenfratzSurveyRealtimeSoft2003,
+  title = {A {{Survey}} of {{Real-time Soft Shadows Algorithms}}: {{Real-time Soft Shadows}}},
+  shorttitle = {A {{Survey}} of {{Real-time Soft Shadows Algorithms}}},
+  author = {Hasenfratz, J. -M. and Lapierre, M. and Holzschuch, N. and Sillion, F. and {Artis GRAVIRIMAG-INRIA}},
+  date = {2003-12},
+  journaltitle = {Computer Graphics Forum},
+  volume = {22},
+  number = {4},
+  pages = {753--774},
+  issn = {01677055},
+  doi = {10.1111/j.1467-8659.2003.00722.x},
+  url = {https://onlinelibrary.wiley.com/doi/10.1111/j.1467-8659.2003.00722.x},
+  urldate = {2022-06-08},
+  abstract = {Recent advances in GPU technology have produced a shift in focus for real-time rendering applications, whereby improvements in image quality are sought in addition to raw polygon display performance. Rendering effects such as antialiasing, motion blur and shadow casting are becoming commonplace and will likely be considered indispensable in the near future. The last complete and famous survey on shadow algorithms — by Woo et al.52 in 1990 — has to be updated in particular in view of recent improvements in graphics hardware, which make new algorithms possible. This paper covers all current methods for real-time shadow rendering, without venturing into slower, high quality techniques based on ray casting or radiosity. Shadows are useful for a variety of reasons: first, they help understand relative object placement in a 3D scene by providing visual cues. Second, they dramatically improve image realism and allow the creation of complex lighting ambiances. Depending on the application, the emphasis is placed on a guaranteed framerate, or on the visual quality of the shadows including penumbra effects or “soft shadows”. Obviously no single method can render physically correct soft shadows in real time for any dynamic scene! However our survey aims at providing an exhaustive study allowing a programmer to choose the best compromise for his/her needs. In particular we discuss the advantages, limitations, rendering quality and cost of each algorithm. Recommendations are included based on simple characteristics of the application such as static/moving lights, single or multiple light sources, static/dynamic geometry, geometric complexity, directed or omnidirectional lights, etc. Finally we indicate which methods can efficiently exploit the most recent graphics hardware facilities.},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/6ERRH2XU/Hasenfratz et al. - 2003 - A Survey of Real-time Soft Shadows Algorithms Rea.pdf}
+}
+
 @article{kajiyaRENDERINGEQUATION1986,
   title = {{{THE RENDERING EQUATION}}},
   author = {Kajiya, James T},
@@ -62,6 +125,31 @@
   pages = {8},
   langid = {english},
   file = {/home/jorge/Zotero/storage/S2HW9YZ2/Kajiya - 1986 - THE RENDERING EQUATION.pdf}
+}
+
+@inproceedings{kellerAdvancedQuasiMonte2012,
+  title = {Advanced (Quasi) {{Monte Carlo}} Methods for Image Synthesis},
+  booktitle = {{{ACM SIGGRAPH}} 2012 {{Posters}} on - {{SIGGRAPH}} '12},
+  author = {Keller, Alexander and Premoze, Simon and Raab, Matthias},
+  date = {2012},
+  pages = {1--46},
+  publisher = {{ACM Press}},
+  location = {{Los Angeles, California}},
+  doi = {10.1145/2343483.2343502},
+  url = {http://dl.acm.org/citation.cfm?doid=2343483.2343502},
+  urldate = {2022-05-24},
+  eventtitle = {{{ACM SIGGRAPH}} 2012 {{Posters}}},
+  isbn = {978-1-4503-1678-1},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/CWDHYB39/Keller et al. - 2012 - Advanced (quasi) Monte Carlo methods for image syn.pdf}
+}
+
+@misc{L1996MCTAOFPBR,
+  title = {Monte Carlo Techniques and Optimisations for Physically Based Rendering},
+  author = {Lafortune, Erik},
+  date = {1996-06},
+  location = {{Wadern, Germany}},
+  howpublished = {Dagstuhl Seminar on Rendering}
 }
 
 @online{LightSettingsBlender,
@@ -122,6 +210,24 @@
   abstract = {In a distribution ray tracer, the crucial part of the direct lighting calculation is the sampling strategy for shadow ray testing. Monte Carlo integration with importance sampling is used to carry out this calculation. Importance sampling involves the design of integrand-speci c probability density functions which are used to generate sample points for the numerical quadrature. Probability density functions are presented that aid in the direct lighting calculation from luminaires of various simple shapes. A method for de ning a probability density function over a set of luminaires is presented that allows the direct lighting calculation to be carried out with one sample, regardless of the number of luminaires.},
   langid = {english},
   file = {/home/jorge/Zotero/storage/4W7PHA9H/Shirley et al. - 1996 - Monte Carlo techniques for direct lighting calcula.pdf}
+}
+
+@article{sutherlandReentrantPolygonClipping1974,
+  title = {Reentrant Polygon Clipping},
+  author = {Sutherland, Ivan E. and Hodgman, Gary W.},
+  date = {1974-01},
+  journaltitle = {Communications of the ACM},
+  shortjournal = {Commun. ACM},
+  volume = {17},
+  number = {1},
+  pages = {32--42},
+  issn = {0001-0782, 1557-7317},
+  doi = {10.1145/360767.360802},
+  url = {https://dl.acm.org/doi/10.1145/360767.360802},
+  urldate = {2022-05-31},
+  abstract = {A new family of clipping algorithms is described. These algorithms are able to clip polygons against irregular convex plane-faced volumes in three dimensions, removing the parts of the polygon which lie outside the volume. In two dimensions the algorithms permit clipping against irregular convex windows. Polygons to be clipped are represented as an ordered sequence of vertices without repetition of first and last, in marked contrast to representation as a collection of edges as was heretofore the common procedure. Output polygons have an identical format, with new vertices introduced in sequence to describe any newly-cut edge or edges. The algorithms easily handle the particularly difficult problem of detecting that a new vertex may be required at a corner of the clipping window. The algorithms described achieve considerable simplicity by clipping separately against each clipping plane or window boundary. Code capable of clipping the polygon against a single boundary is reentered to clip against subsequent boundaries. Each such reentrant stage of clipping need store only two vertex values and may begin its processing as soon as the first output vertex from the preceeding stage is ready. Because the same code is reentered for clipping against subsequent boundaries, clipping against very complex window shapes is practical. For perspective applications in three dimensions, a six-plane truncated pyramid is chosen as the clipping volume. The two additional planes parallel to the projection screen serve to limit the range of depth preserved through the projection. A perspective projection method which provides for arbitrary view angles and depth of field in spite of simple fixed clipping planes is described. This method is ideal for subsequent hiddensurface computations.},
+  langid = {english},
+  file = {/home/jorge/Zotero/storage/CK3DKKU7/Sutherland and Hodgman - 1974 - Reentrant polygon clipping.pdf}
 }
 
 @article{urenaAreaPreservingParametrizationSpherical2013,

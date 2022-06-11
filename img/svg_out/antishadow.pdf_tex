@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{693.54753714bp}%
+    \setlength{\unitlength}{462.1304899bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,9 +50,24 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.17298355)%
+  \begin{picture}(1,1.17462662)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{antishadow.pdf}}%
+    \put(0.41643037,0.7523274){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}\small umbra\end{tabular}}}}%
+    \put(0.60944939,1.08143258){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\small penumbra\end{tabular}}}}%
+    \put(0.7678042,0.64741891){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}\small antumbra\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{antishadow.pdf}}%
+    \put(0.0028604,1.02504176){\color[rgb]{0.85882353,0.68627451,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Light}\end{tabular}}}}%
+    \put(0.41734685,1.00880316){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{Occluder}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{antishadow.pdf}}%
+    \put(0.41643037,0.13024195){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}\small anti-umbra\end{tabular}}}}%
+    \put(0.59637296,0.45934713){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\small anti-penumbra\end{tabular}}}}%
+    \put(0.76780419,0.02533349){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}\small anti-antumbra\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{antishadow.pdf}}%
+    \put(0.0028604,0.40295631){\color[rgb]{0.85882353,0.68627451,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Light}\end{tabular}}}}%
+    \put(0.41734685,0.38671771){\color[rgb]{0.4,0.6,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{Portal}\end{tabular}}}}%
+    \put(0.96484329,1.01135045){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}\textbf{\textit{\small Shadow}}\end{tabular}}}}%
+    \put(0.97618832,0.3900409){\color[rgb]{0.81568627,0.65098039,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}\textbf{\textit{\small Antishadow}}\end{tabular}}}}%
   \end{picture}%
 \endgroup%
