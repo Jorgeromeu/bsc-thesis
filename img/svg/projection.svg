@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.989437"
-     inkscape:cx="350.19915"
-     inkscape:cy="352.22051"
+     inkscape:cx="699.89297"
+     inkscape:cy="204.66184"
      inkscape:window-width="1920"
      inkscape:window-height="1020"
      inkscape:window-x="0"
@@ -351,7 +351,7 @@
        d="m 89.31642,139.19356 21.79904,13.27152 31.34964,-11.1576 -23.72604,-11.25641 z"
        id="path17231" />
     <circle
-       style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.583018;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0"
+       style="display:inline;fill:#cc0000;fill-opacity:1;stroke:none;stroke-width:0.583018;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0"
        id="path14661"
        cx="138.68668"
        cy="199.28699"
@@ -369,7 +369,7 @@
        transform="translate(6.1651977,-33.211501)"><tspan
          x="149.93338"
          y="118.41715"
-         id="tspan22608">light</tspan></text>
+         id="tspan1787">light</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.5861px;line-height:1.25;font-family:'Noto Naskh Arabic UI';-inkscape-font-specification:'Noto Naskh Arabic UI, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;white-space:pre;inline-size:14.9564;display:inline;fill:#1f77b4;stroke-width:0.264583"
@@ -379,17 +379,17 @@
        transform="translate(-115.03115,28.073299)"><tspan
          x="162.05444"
          y="118.41715"
-         id="tspan22610">portal</tspan></text>
+         id="tspan1789">portal</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.5861px;line-height:1.25;font-family:'Noto Naskh Arabic UI';-inkscape-font-specification:'Noto Naskh Arabic UI, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:32.1679;display:inline;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.5861px;line-height:1.25;font-family:'Noto Naskh Arabic UI';-inkscape-font-specification:'Noto Naskh Arabic UI, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:32.1679;display:inline;stroke-width:0.264583;fill:#cc0000"
        x="149.93338"
        y="118.41715"
        id="text33907"
        transform="translate(-6.6103717,82.062221)"><tspan
          x="149.93338"
          y="118.41715"
-         id="tspan22612">shading point</tspan></text>
+         id="tspan1791">shading point</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:4.5861px;line-height:1.25;font-family:'Noto Naskh Arabic UI';-inkscape-font-specification:'Noto Naskh Arabic UI, Bold';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect19881);display:inline;stroke-width:0.264583"

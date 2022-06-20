@@ -1,21 +1,20 @@
 \section{Discussion}
 \label{sec:discussion}
-\todo[inline, caption={}]{
-\begin{minipage}{\linewidth}
-    Incomplete due to missing results.\\
 
-    Things to potentially include (depending on if I implement the feature or not):
+We have shown that our method generally increases the convergence of direct lighting calculations at the expense of some additional artist input in specifying the portal location. However, we believe this burden on the artist is not too significant. Since light portals for environment lights are already widely adopted. The only additional change in artist workflow would be optionally allowing to change the target of a light portal to an area light.
 
-    \begin{itemize}
-        \item \textbf{Limitation:} Requires additional artist input so not great, but mention that since standard light portals are already included in most pipelines it should be feasible to implement it.
-        \item \textbf{Limitation:} Implementation presented is limited to AAplanes, give guidance on generalizing
-    \end{itemize}
-\end{minipage}
-}
+\subsection{Responsible research}
+Reproducibility in computer graphics is crucial, as it enables verifying and improving  existing techniques. To ensure that our method is reproducible, we include implementation details in \autoref{sec:implementation} and chose to implement our method in the publically available and open-source renderer PBRT-v3 \cite*[]{pharrPhysicallyBasedRendering2016}, and use simple scenes with a publicly available model. This work follows the research integrity principles from the \emph{Netherlands code of conduct} .
 
+\subsection{Limitations and Future work}
 
+\paragraph*{Arbitrary geomertry}
 
+For arbitrary polygonal objects, the shape of the umbra and penumbra regions can be embedded in a discontinuity mesh constructed from the edges and vertices of the light, and the portal \cite*{drettakisFastShadowAlgorithm1994}. However, for simplicity, we implement a version of this algorithm limited to rectangular aligned light and portal.
 
+Throughout the paper, we assumed that the portal and light are aligned, rectangular planes. While this restriction simplifies some calculations, it can be quite restrictive. However, generalizing to arbitrary geometry is, in principle, straightforward. The antishadow umbra and penumbra can be calculated for arbitrary polygonal light and portal by using existing efficient shadow algorithms \cite*[]{drettakisFastShadowAlgorithm1994}. While the more general algorithm may introduce substantial overhead, this could be alleviated by caching the shadow volume data in a spatial data structure. 
 
+Projection sampling can also be generalized to arbitrary polygonal geometry by using a general clipping algorithm \cite*[]{greinerEfficientClippingArbitrary1998} and then sampling the clipped triangle mesh. While this would also introduce overhead, it is decreased by using shadow volumes \cite{conduct}.
 
-
+\paragraph*{Light portals for point lights}
+Throughout this paper, we have focused on applying light portals to area lights. However, the method provided is general enough to be applied to other kinds of lights, such as point lights. In this case, the antishadow is significantly simplified as it is made up only of the umbra.

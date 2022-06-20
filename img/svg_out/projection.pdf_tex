@@ -56,7 +56,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=1]{projection.pdf}}%
     \put(0.79942346,0.68224305){\color[rgb]{1,0.6,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}light\end{tabular}}}}%
     \put(0.16257307,0.32442359){\color[rgb]{0.12156863,0.46666667,0.70588235}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}portal\end{tabular}}}}%
-    \put(0.7248316,0.00920208){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}shading point\end{tabular}}}}%
+    \put(0.7248316,0.00920208){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}shading point\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{projection.pdf}}%
     \put(0.07102945,0.66132635){\color[rgb]{1,0.6,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l_{lo}$\end{tabular}}}}%
     \put(1.0014995,0.62987978){\color[rgb]{1,0.6,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$l_{lo}$\end{tabular}}}}%

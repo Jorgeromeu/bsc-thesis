@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.3786088"
-     inkscape:cx="385.30926"
-     inkscape:cy="417.68113"
+     inkscape:zoom="1.1893044"
+     inkscape:cx="225.76222"
+     inkscape:cy="414.10761"
      inkscape:window-width="1920"
      inkscape:window-height="1020"
      inkscape:window-x="0"
@@ -364,9 +364,9 @@
        id="text20275"><tspan
          sodipodi:role="line"
          id="tspan20273"
-         style="font-weight:normal;text-align:end;text-anchor:end;stroke-width:0.264583;font-style:normal"
+         style="font-style:normal;font-weight:normal;text-align:end;text-anchor:end;stroke-width:0.264583"
          x="-78.715721"
-         y="-80.6875">\small anti-umbra</tspan></text>
+         y="-80.6875">\small antiumbra</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.5861px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
@@ -377,7 +377,7 @@
          id="tspan20277"
          style="font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="-49.379795"
-         y="-134.34131">\small anti-penumbra</tspan></text>
+         y="-134.34131">\small antipenumbra</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.5861px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
@@ -386,9 +386,9 @@
        id="text20283"><tspan
          sodipodi:role="line"
          id="tspan20281"
-         style="font-weight:normal;text-align:end;text-anchor:end;stroke-width:0.264583;font-style:normal"
+         style="font-style:normal;font-weight:normal;text-align:end;text-anchor:end;stroke-width:0.264583"
          x="-21.431467"
-         y="-63.584339">\small anti-antumbra</tspan></text>
+         y="-63.584339">\small antiantumbra</tspan></text>
     <path
        style="fill:none;fill-opacity:0.405089;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#Arrow2);paint-order:stroke fill markers"
        d="m -77.7594,-81.587309 c 5.9314,0.388 15.5902,-8.7729 17.0285,-19.932901"

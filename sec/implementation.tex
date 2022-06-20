@@ -1,4 +1,5 @@
 \section{Implementation}
 \label{sec:implementation}
 
-\todo[inline]{still some work to do in this regard unfortunately}
+We implement our method within the PBRT-V3 renderer described in \cite*{pharrPhysicallyBasedRendering2016}. We create a \texttt{LightPortal} class by extending the the \texttt{Light} interface. The light portal class contains the portal geometry and a reference to its target area light. The class implements uniform portal area sampling and projection sampling (\autoref{sec:proj-sampling}). Lastly, the class implements routines to efficiently determine which antishadow volume the shading point is located. Each light portal is then included in the light distribution, and the probability of sampling it is weighed spatially.
+

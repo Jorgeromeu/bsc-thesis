@@ -42,7 +42,7 @@
 
 
 % biblatex
-\usepackage[style=numeric, sorting=none]{biblatex}
+\usepackage[backend=bibtex, style=alphabetic, sorting=none]{biblatex}
 \addbibresource{bib.bib}
 
 % fancy itemize
@@ -81,6 +81,14 @@
   tabsize=2
 }
 
+\def\chapterautorefname{Chapter}%
+\def\sectionautorefname{Section}%
+\def\subsectionautorefname{Subsection}%
+\def\subsubsectionautorefname{Subsubsection}%
+\def\paragraphautorefname{Paragraph}%
+\def\tableautorefname{Table}%
+\def\equationautorefname{Equation}%
+
 % Fancy abstract
 \renewenvironment{abstract}
 {
@@ -94,15 +102,16 @@
 }
 
 \title{%
+  \vspace{-2cm}
   \huge \textbf{Efficient direct lighting calculation for area lights with light portals}\\
   \vspace{0.4cm}
   \Large J. Romeu Huidobro\\
   \vspace{0.3cm}
-  \large Supervisors:\; M. van de Ruit, E. Eismann\\
+  \large Supervisors:\; M. van de Ruit, E. Eisemann\\
   \vspace{0.3cm}
   EEMCS, Delft University of Technology, The Netherlands
-  \vspace{-0.8cm}
-}
+  \vspace{-1.3cm}
+}  
 \author{}
 \date{}
 
@@ -112,12 +121,21 @@
 
 \maketitle
 
+\begin{figure*}[ht]
+    \centering
+    \def\svgwidth{\textwidth}
+    \input{img/svg_out/teaser.pdf_tex}
+    \caption{Direct lighting for a simple indoor scene where the light source is occluded by the lampshade. Our method works by manually specifying the locations of the openings to the light as portals, and then focusing sampling to the directions facing the portal.}
+    \label{fig:teaser}
+\end{figure*}
+
+
 \begin{abstract}
-  \blindtext[1]
+  Direct lighting calculation is an essential part of photorealistic rendering. Standard importance sampling techniques converge slowly in scenes where a light source is only visible through small openings as visibility is not considered. This problem is often addressed by manually placing \emph{light portals}, marking the openings to the light. However, existing portal sampling techniques are not suitable for area lights since the portal is often times larger than the light itself. We present a novel portal sampling technique inspired by shadow volumes, which considers the light geometry to efficiently choose the optimal sampling strategy, depending on the location of the shading point. Our technique is unbiased, robust, applicable to many scenes, and easy to integrate into an existing renderer.
 \end{abstract}
 
 \begin{multicols*}{2}
-  
+ 
 
 \input{sec/intro.tex}
 \input{sec/background.tex}
@@ -130,4 +148,5 @@
 \printbibliography[heading=bibintoc, title={References}]
 
 \end{multicols*}
+
 \end{document}

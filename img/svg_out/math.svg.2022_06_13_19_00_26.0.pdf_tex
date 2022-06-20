@@ -1,0 +1,137 @@
+%% Creator: Inkscape 1.2 (dc2aedaf03, 2022-05-15), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'math.svg.2022_06_13_19_00_26.0.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{2906.01960917bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.15501509)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.28351056,0.97063685){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Direct lighting integral}\end{tabular}}}}%
+    \put(0.52708143,0.95226681){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Estimator 1:  Uniformly sample hemisphere}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.38665891,1.15189709){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{intetral over domain}\end{tabular}}}}%
+    \put(0.47926606,1.15189709){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{MC estimate}\end{tabular}}}}%
+    \put(0.38846863,1.09981117){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Expectation of estimator is equal to integral\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.27945775,0.78764061){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}To evaluate it, iterate over each light, and sample the incoming light from _that_ specific light\end{tabular}}}}%
+    \put(0.33845037,0.97085606){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Goal: have an unbiased estimator for \textit{L}\textit{o}\textit{(p, w}\textit{o}\textit{)}\end{tabular}}}}%
+    \put(0.28369131,0.87577309){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Rewrite direct lighting integral as sum of contribution per light\end{tabular}}}}%
+    \put(0.52778851,0.94011657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Simplest, just apply monte carlo estimator to the main integral,\end{tabular}}}}%
+    \put(0.28583321,0.89902556){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Estimator 2: Uniformly sample all lights}\end{tabular}}}}%
+    \put(0.28569857,0.83454421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Since RHS is a sum, and expectation of sum is the sum of the expectations of each term, we can rewrite to\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.52417434,0.8740313){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Estimator 3: Sample one light}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.5218388,0.86186799){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Once again, rewrite direct lighting integral as sum over contributions of each light\end{tabular}}}}%
+    \put(0.52183958,0.82366712){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Instead of using Exp[Sum] = Sum(exps), we can randomly draw one of the terms in the sum and divide by pdf of choosing that term\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.52250448,0.76497277){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}To sample, choose a light, with pdf $p$, then sample the light somehow and then multiply the sampled value by 1/p. \end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.5368519,1.15184791){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{MC requirements\\}\\All $x$ values that produce a nonzero inegrand need to be able to be sampled.\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.42848616,0.52843351){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Unbiased way to sample a light which has a portal:}\end{tabular}}}}%
+    \put(0.42982505,0.51241659){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}We want an estimator for the radiance \textit{from the }\textit{given light $l$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.42721314,0.46593179){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Requirement:} from any location of the shading point, there \textbf{must be a nonzero }\textbf{probability of sampling any light }\textbf{carrying path}\end{tabular}}}}%
+    \put(0.42430384,0.43251747){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Neither portal or projection sampling has this property in general, regardless of the location of the shading point.\\\\One sampling strategy that does have this property always is light sampling (even though in many cases its a shitty strategy)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.5144643,0.45475029){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}because the portal doesnt mean that its the only way to hit the light, for example in this scene:\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.5144643,0.41875813){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Yeah, the portal is kinda shit placement, but in general I dont want unbiasedness to depend on the portal placement being geometrically correct\end{tabular}}}}%
+    \put(0.42430384,0.38507127){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}solution -> at shading point, either sa\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.60670366,0.30601468){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{optimal strategy:} \textit{portal}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.47589093,0.21393852){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}instead sample from: \end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.44305869,0.22597326){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}doesnt cover the entire range!\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.62316229,0.27785804){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}optimal strategy may miss visible regions\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.70206341,0.32030983){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}So we can weigh the optima\end{tabular}}}}%
+    \put(0.6760605,0.22696761){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}where \textit{w }represents "how bad the portal is placed". If it were placed such that no light hits the shading point (in front of portal) wo going through the portal then it can be 1, but if the portal is meaningless it should be 0\end{tabular}}}}%
+    \put(0.61367341,0.60126492){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{portal params}\end{tabular}}}}%
+    \put(0.61378974,0.59273742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{weight front}: how much to prioritize the portal when point is in front\end{tabular}}}}%
+    \put(0.61378974,0.58584451){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{weight back}: how much to prioritize the portal when point is in behind\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.08470949,0.46932384){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}If we want to sample a PDF which is a linear combination of two PDFs\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.07783776,0.43136376){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}With probability \textit{1/w }choose to sample from one or the other. The total pdf of the sample is then\end{tabular}}}}%
+    \put(0.08610038,0.48785263){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Sampling from a linear combination of known PDFs}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.83641261,0.55855844){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{portal based-spatial emitter sampling:}\\\end{tabular}}}}%
+    \put(0.89833252,0.54867603){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}For scenes with multiple lights, the portal data can be incorporated into the light sampling distribution\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.90446266,0.52961344){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{behind portal: }decrease prob propto \textit{w}back\end{tabular}}}}%
+    \put(0.90446266,0.52272396){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{out of antishadow: }decrease prob propto \textit{w}front\end{tabular}}}}%
+    \put(0.90446266,0.51135021){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{antipenumbra }\end{tabular}}}}%
+    \put(0.90446266,0.50503542){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{antiumbra}\end{tabular}}}}%
+    \put(0.90446266,0.49832817){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{antiantumbra}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.83878146,0.48246964){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Rationale:} if portal is placed well (\textit{w}front is high) then most shading points in outside of the antishadow (but in front of the portal) will be occluded, thus we prioritize other lights.\\\\If \textit{w}back is high, then the light is not very visible from behind\end{tabular}}}}%
+    \put(0.93459352,0.50498621){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Second one a bit sus but why not\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.1414022,0.31272642){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Multiple portals: strange case...\end{tabular}}}}%
+    \put(0.14043408,0.29759381){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Include both portals as "lights" in the distrib, but dont include the light\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.13532901,0.16462749){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}lightDistrib:\\\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.14183967,0.11999581){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Valid sampling strategy: }at shading point, choose the portal to decide calculations on at random\end{tabular}}}}%
+    \put(0.14183967,0.11387633){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}since sampling portal doesnt provide any correctness, just adjusts the distribution to hopefully draw better samples \end{tabular}}}}%
+    \put(0.14183967,0.10558864){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{issue: }doing it this way doesnt allow us to be smart about which portal to sample for emitter smapling reasons, we could make \\the decidion at each point, but this requires doing math so lets try to avoid\end{tabular}}}}%
+    \put(0.141839,0.07962564){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Approach 2:\\}include each portal in the light distribution of the scene, then have different weights for each portal. however we need some additional bookkeeping to ensure we dont heavily prioritize sampling a light with multiple portals\end{tabular}}}}%
+    \put(0.141839,0.05210586){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}solution: sample a portal/light from the distribution however divide by the prob of the **light** being sampled\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+    \put(0.17107974,0.01016506){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{p}\end{tabular}}}}%
+    \put(0.18551365,0.04015577){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{lightDistrib:}\\\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{math.svg.2022_06_13_19_00_26.0.pdf}}%
+  \end{picture}%
+\endgroup%

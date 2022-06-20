@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{440.47914866bp}%
+    \setlength{\unitlength}{523.06930781bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,14 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.23618692)%
+  \begin{picture}(1,0.20028591)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{antishadow-pov.pdf}}%
-    \put(0.49977818,0.21030361){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}anti-antumbra\end{tabular}}}}%
+    \put(0.49325592,0.17709767){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\footnotesize antiantumbra}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{antishadow-pov.pdf}}%
-    \put(0.09079132,0.21030361){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}anti-umbra\end{tabular}}}}%
+    \put(0.14884616,0.17709767){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\footnotesize antiumbra}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{antishadow-pov.pdf}}%
-    \put(0.89643475,0.21570473){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}anti-penumbra\end{tabular}}}}%
+    \put(0.82728231,0.18164598){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\footnotesize antipenumbra}\end{tabular}}}}%
   \end{picture}%
 \endgroup%
